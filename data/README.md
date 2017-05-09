@@ -1,0 +1,8 @@
+Here is the Figure legend:
+
+FIG 1
+Design of dual-index sequencing strategy and schematic describing the four sequencing reads. The primers specific to the 16S rRNA gene are shown in boldface black text, linkers are in blue, pads are in green, the index region is in red, and the adapters are underlined. This schematic is demonstrated using the V4-specific primer sequences and linkers. The PCR and sequencing primers for each of the three regions are provided in the supplemental material.
+
+Paragrahph description:
+
+verall strategy and primer design.Our dual-index paired-end sequencing approach is analogous to the single-index approach described elsewhere (13, 14). As shown in Fig. 1, each primer consists of the appropriate Illumina adapter, an 8-nt index sequence, a 10-nt pad sequence, a 2-nt linker, and the gene-specific primer. The index sequences were selected to be at least 2 nt different from all other indices in use, and when combined, they provide an equal intensity in the two light channels used by the sequencer (i.e., green channel [G/T] and red channel [A/C]). The index sequences were also at least 2 nt different from the indices that accompany the Nextera library construction kit. The 2-nt linker sequence was selected to not be complementary to the homologous positions in a large collection of 16S rRNA gene sequences (19). Finally, the pad sequence was selected so that the combined pad, linker, and gene-specific primer sequences had an estimated melting temperature between 60 and 65°C. For the development of our method, we used gene-specific primers to amplify the V34, V4, and V45 regions from the bacterial 16S rRNA gene that have been described elsewhere (14, 20). The complete primers were each 63 to 68 bp long.
