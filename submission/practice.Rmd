@@ -5,7 +5,28 @@ date: "May 10, 2017"
 output: html_document
 ---
 
-
+```{r knitr_settings, eval=TRUE, echo=FALSE, cache=FALSE}
+opts_chunk$set("tidy" = TRUE)
+opts_chunk$set("echo" = FALSE)
+opts_chunk$set("eval" = TRUE)
+opts_chunk$set("warning" = FALSE)
+opts_chunk$set("cache" = FALSE)
+inline_hook <- function(x){
+    if(is.list(x)){
+        x <- unlist(x)
+    }
+    if(is.numeric(x)){
+        if(abs(x - round(x)) < .Machine$double.eps^0.5){
+            paste(format(x,big.mark=',', digits=0, scientific=FALSE))
+        } else {
+            paste(format(x,big.mark=',', digits=1, nsmall=1, scientific=FALSE))
+        }
+    } else {
+        paste(x)
+    }
+}
+knitr::knit_hooks$set(inline=inline_hook)
+```
 
 
 ```{r scaling up, echo=FALSE, include=TRUE} 
@@ -30,11 +51,11 @@ output: html_document
     variation between the late samples than the early samples. In addition to
     the mouse fecal samples, we allocated 2 pairs of indices to resequence our
     mock community. We generated 
-`r format(round(million_sequence_counts, 1), nsmall-1L)` million pairs of sequence reads from the
+`r million_sequence_counts` million pairs of sequence reads from the
     16S rRNA gene with an average coverage of 9,913
-`r format(round(sequence_counts, 1) ` pairs of reads per sample
+`r sequence_counts` pairs of reads per sample
     (95% of the samples had more than 
-`r percentile_sequence_counts ` pairs of sequences) using a new
+`r percentile_sequence_counts` pairs of sequences) using a new
     collection of 8-nt indices (see the supplemental material). Although
     individual samples were expected to have various amplification efficiencies,
     analysis of the number of reads per index did not suggest a systematic
