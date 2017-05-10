@@ -30,9 +30,9 @@ output: html_document
     variation between the late samples than the early samples. In addition to
     the mouse fecal samples, we allocated 2 pairs of indices to resequence our
     mock community. We generated 
-`r million_sequence_counts ` million pairs of sequence reads from the
+`r format(round(million_sequence_counts, 1), nsmall-1L)` million pairs of sequence reads from the
     16S rRNA gene with an average coverage of 9,913
-`r sequence_counts ` pairs of reads per sample
+`r format(round(sequence_counts, 1) ` pairs of reads per sample
     (95% of the samples had more than 
 `r percentile_sequence_counts ` pairs of sequences) using a new
     collection of 8-nt indices (see the supplemental material). Although
