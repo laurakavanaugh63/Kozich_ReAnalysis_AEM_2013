@@ -8,7 +8,7 @@ output: html_document
 
 
 
-```{r scaling up, echo=FALSE} 
+```{r scaling up, echo=FALSE, include=TRUE} 
  shared_file_name <- "data/mothur/stability.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.opti_mcc.shared"
  shared_file <- read.table(file=shared_file_name, header=T, stringsAsFactors=F)
  sequence_counts <- rowSums(shared_file[,-c(1,2,3)])
@@ -31,7 +31,8 @@ output: html_document
     the mouse fecal samples, we allocated 2 pairs of indices to resequence our
     mock community. We generated 
 `r million_sequence_counts ` million pairs of sequence reads from the
-    16S rRNA gene with an average coverage of 9,913 pairs of reads per sample
+    16S rRNA gene with an average coverage of 9,913
+`r sequence_counts ` pairs of reads per sample
     (95% of the samples had more than 
 `r percentile_sequence_counts ` pairs of sequences) using a new
     collection of 8-nt indices (see the supplemental material). Although
